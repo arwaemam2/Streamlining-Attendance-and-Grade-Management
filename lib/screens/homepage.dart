@@ -20,7 +20,7 @@ class homePage extends StatelessWidget {
               name: 'Arwa Emam',
               profession: 'Student',
             ),
-            icons()
+            IconsScreen()
           ],
         ),
       ),

@@ -1,4 +1,4 @@
-import 'package:app/screens/homepage.dart';
+import 'package:app/models/icons.dart';
 import 'package:flutter/material.dart';
 
 class Loginstudent extends StatelessWidget {
@@ -6,7 +6,7 @@ class Loginstudent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
         appBar: AppBar(),
         backgroundColor: Colors.grey[300],
         body: Center(
@@ -102,7 +102,7 @@ class Loginstudent extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                      return homePage();
+                      return IconsScreen();
                           },
                         ),
                       );
@@ -127,5 +127,3 @@ class Loginstudent extends StatelessWidget {
         ));
   }
 }
-
- 

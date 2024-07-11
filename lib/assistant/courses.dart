@@ -55,13 +55,25 @@ class subjects extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
             ),
            
-            child: Center(
-              child: Text(
-                'Course2',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 25),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return sections();
+                    },
+                  ),
+                );
+              },
+              child: Center(
+                child: Text(
+                  'Course2',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25),
+                ),
               ),
             ),
           ),

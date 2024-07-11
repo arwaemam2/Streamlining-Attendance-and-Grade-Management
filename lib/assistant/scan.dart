@@ -16,12 +16,14 @@ class _ScanScreenState extends State<ScanScreen> {
     height = MediaQuery.of(context).size.height;
     width = MediaQuery.of(context).size.width;
     return Scaffold(
-        appBar: AppBar(
-          title: Text('Scanning QR code'),
-        ),
-        body: Center(
+      appBar: AppBar(
+        title: Text('Scanning QR code'),
+      ),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
@@ -30,16 +32,14 @@ class _ScanScreenState extends State<ScanScreen> {
               ),
               ElevatedButton(
                 onPressed: scanQr,
-                child: Text(
-                  ('Scanner'),
-                ),
+                child: Text('Scanner'),
               ),
-              SizedBox(
-                height: width,
-              )
+              SizedBox(height: 20), // Add some spacing if needed
             ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 
   Future<void> scanQr() async {

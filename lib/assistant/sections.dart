@@ -28,7 +28,7 @@ class sections extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return AbsenceOfSections();
+                      return attendancePage();
                     },
                   ),
                 );
@@ -59,7 +59,7 @@ class sections extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return AbsenceOfSections();
+                      return attendancePage();
                     },
                   ),
                 );
@@ -90,7 +90,7 @@ class sections extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return AbsenceOfSections();
+                      return attendancePage();
                     },
                   ),
                 );

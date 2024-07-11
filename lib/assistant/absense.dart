@@ -1,90 +1,63 @@
 import 'package:flutter/material.dart';
 
-// void main() {
-//   runApp(Absenceofsections());
-// }
 
-// class Absenceofsections extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       debugShowCheckedModeBanner: false,
-//       title: 'Absence of sections',
-//       theme: ThemeData(
-//         primarySwatch: Colors.blue,
-//       ),
-//       home: AbsenceOfSections(),
-//     );
-//   }
-// }
-
-class AbsenceOfSections extends StatefulWidget {
-  @override
-  _AbsenceOfSectionsState createState() => _AbsenceOfSectionsState();
+class attendancePage extends StatefulWidget {
+@override
+ _MyDynamicTableState createState() => _MyDynamicTableState();
 }
 
-class _AbsenceOfSectionsState extends State<AbsenceOfSections> {
-  List<String> items = [
-    'week 1',
-    'week 2',
-    'week 3',
-    'week 4',
-    'week 5',
-    'week 6',
-    'week 7',
-    'week 8',
-    'week 9',
-    'week 10',
-    'week 11',
-    'week 12',
-    
-    // Add more items as needed
-  ];
+class _MyDynamicTableState extends State<attendancePage> {List<List<String>> _data = [
+ ['ID', 'Name', 'Absence Status'],
+ // ['1', 'arwa', '2'],
+];
+ @override
+ Widget build(BuildContext context) {
+ return Scaffold(
+ // appBar: AppBar(),
+ appBar: AppBar(
 
-  Map<String, bool> checkedItems = {};
+title: Text('Attendance List'),
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      
-      appBar: AppBar(
-        
-      title: Text('Attendance List'),
-   
-       leading: IconButton(
-            icon: Icon(Icons.arrow_back),
-            onPressed: () {
-              // Navigate back when the leading icon/button is pressed
-              Navigator.pop(context);
-            },
-          ),
-      
-      ),
+ leading: IconButton(
+ icon: Icon(Icons.arrow_back),
+onPressed: () {
+ // Navigate back when the leading icon/button is pressed
+ Navigator.pop(context);
+},),
 
-      body: ListView.builder(
-        itemCount: items.length,
-        itemBuilder: (context, index) {
-          final item = items[index];
-          return CheckboxListTile(
-            title: Text(item),
-            value: checkedItems[item] ?? false,
-            onChanged: (bool? value) {
-              setState(() {
-                checkedItems[item] = value ?? false;
-              });
-            },
-          );
-        },
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: (
-          
-        ) {
-          // Handle action when FAB is pressed
-          print('Checked items: $checkedItems');
-        },
-        child: Icon(Icons.check),
-      ),
-    );
-  }
+ ),
+
+body: SingleChildScrollView(
+child: Table(
+ border: TableBorder.all(),
+ columnWidths: {
+ 0: FixedColumnWidth(100),
+1: FlexColumnWidth(),
+ 2: FlexColumnWidth(),
+},
+children: _data.map((row) {
+ return TableRow(
+ children: row.map((cell) {
+ return TableCell(
+ child: Padding(
+ padding: const EdgeInsets.all(8.0),
+ child: Text(cell),
+ ),
+);
+ }).toList(),
+ );
+ }).toList(),
+ ),
+ ),
+ floatingActionButton: FloatingActionButton(
+ onPressed: () {
+ // Add new row
+ setState(() {
+ _data.add(['New ID', 'New Name', 'New Absence Status']);
+ });
+ },
+ child: Icon(Icons.add),
+),
+);
+ }
 }

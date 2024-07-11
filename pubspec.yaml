@@ -34,6 +34,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   flutter_barcode_scanner: ^2.0.0
   dio: ^5.4.0
+  http: ^1.2.1
 
 dev_dependencies:
   flutter_test:
@@ -59,14 +60,10 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - lib/assets/arwa.jpg
+    # - lib/assets/Capture.PNG
     - lib/assets/assiut_university-removebg-preview.png
     - lib/assets/assiut_university.jpg
 
-  #   - assets/photo_2024-02-22_20-31-04.jpg
-  #   - assets/assiut_university-removebg-preview.png
-  #   - assets/photo_2024-02-22_20-31-08.jpg
-  #   - assets/Screenshot_٢٠٢٣٠٤٢٥-٠٢٥٤١٠_LinkedIn.jpg
  
 
   # An image asset can refer to one or more resolution-specific "variants", see
